@@ -1,12 +1,12 @@
 name: Build and Test .NET Todo App
 
-on: 
-  push: 
-    branches: 
+on:
+  push:
+    branches:
       - main
 
 jobs:
-  build: 
+  build:
     runs-on: ubuntu-latest
 
     steps:
@@ -15,14 +15,17 @@ jobs:
 
       - name: Set up .NET SDK
         uses: actions/setup-dotnet@v2
-        with: 
-          dotnet-version: '9.0'
+        with:
+          dotnet-version: '9.0.x'  # Use latest patch of .NET 9
 
       - name: Restore Dependencies
-        run: dotnet restore
+        run: dotnet restore ToDoApp.sln
+        working-directory: ./Web API
 
       - name: Build Project
-        run: dotnet build --configuration Release
+        run: dotnet build ToDoApp.sln --configuration Release
+        working-directory: ./Web API
 
       - name: Run Tests
-        run: dotnet test --configuration Release --no-build --verbosity normal
+        run: dotnet test ToDoApp.sln --configuration Release --no-build --verbosity normal
+        working-directory: ./Web API
