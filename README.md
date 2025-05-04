@@ -1,4 +1,20 @@
 ## Todo APP ##
+
+## 🧰 Technologies Used
+
+### 💻 Frontend
+- React (Hooks, Functional Components)
+- Axios
+- CSS / TailwindCSS (optional styling)
+
+### 🛠️ Backend
+- .NET 9 (ASP.NET Core Web API)
+- C#
+- AutoMapper
+- xUnit & Moq (for unit testing)
+- Logger (Microsoft.Extensions.Logging)
+- CI/CD for automatic build and tests running 
+
 This application is built using REST API and React. <br/>
 You can do the following operations:
 * Add a Todo
